@@ -6,5 +6,7 @@ public class Main {
 	// write your code here
         System.out.println("Hello");
         System.out.println("Updated on GIT");
+        Library lib = new Library(40,15);
+        System.out.println(lib);
     }
 }
