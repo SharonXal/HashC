@@ -1,12 +1,16 @@
 package com.company;
+import java.util.*;
 
 public class Main {
 
+    static byte totalDays;
     public static void main(String[] args) {
 	// write your code here
-        System.out.println("Hello");
-        System.out.println("Updated on GIT");
-        Library lib = new Library(40,15);
-        System.out.println(lib);
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter total days : ");
+        totalDays = sc.nextByte();
+        //here in the Library constructor method, the place for bookId is vacant, it's for when input is recieved.
+        Library lib = new Library(40,60,6, );
+        System.out.println("Library Score = "+lib.LibraryScore());
     }
 }
