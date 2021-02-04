@@ -11,10 +11,9 @@ public class Main {
         totalDays = sc.nextByte();
         //here in the Library constructor method, the place for bookId is vacant, it's for when input is recieved.
         //Library lib = new Library(40,60,6, );
-        System.out.println("Library Score = "+lib.LibraryScore());
+        //System.out.println("Library Score = "+lib.LibraryScore());
         System.out.println("Hello dick face");
 	    //TODO WORK
         //FUCK OFF
-        //char ch = "Your pussy smells";
     }
 }
