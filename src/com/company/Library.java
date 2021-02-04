@@ -1,6 +1,8 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 public class Library extends Main{
 
@@ -10,7 +12,8 @@ public class Library extends Main{
     boolean isSignedUp;
     int signUpInitial, signUpFinal;
     int libID;
-    int availableDays;//any1
+    int availableDays;
+
 
     Library( int libID,int signUpDays, int bookScannedPerDay, ArrayList<Integer> bookID){
         this.bookScannedPerDay = bookScannedPerDay;
@@ -57,8 +60,7 @@ public class Library extends Main{
         }
 
         public ArrayList<Integer> getBooksForScanning(){
-
+            Collection.sort(bookID, Collections.reverseOrder());
         }
 
     }
-
