@@ -15,5 +15,6 @@ public class Main {
         System.out.println("Hello dick face");
 	    //TODO WORK
         //FUCK OFF
+        //char ch = "Your pussy smells";
     }
 }
