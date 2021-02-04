@@ -48,9 +48,11 @@ public class Library extends Main{
     public int getLibID() {
         return libID;
     }
+
     int libraryAvailableDays(){
         return availableDays;
     }
+
     public void signUp(){
             isSignedUp=true;
             signUpInitial=currentDay;
@@ -61,7 +63,19 @@ public class Library extends Main{
 
         public ArrayList<Integer> getBooksForScanning(){
             Collections.sort(bookID, Collections.reverseOrder());
-
+            ArrayList<Integer> booksForScanning = new ArrayList<>();
+            int totalBooksCanBeScanned = availableDays*bookScannedPerDay;
+            if(totalBooksCanBeScanned>totalBooks){
+                for(int i=0;i<totalBooks;i++){
+                    booksForScanning.add(bookID.get(i));
+                }
+            }
+            else{
+                for(int i=0;i<totalBooksCanBeScanned;i++){
+                    booksForScanning.add(bookID.get(i));
+                }
+            }
+            return booksForScanning;
         }
-
+//TODO Remove books
     }
