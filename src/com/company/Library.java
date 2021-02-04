@@ -12,9 +12,9 @@ public class Library extends Main{
     int libID;
     int availableDays;//any1
 
-    Library(int signUpDays, int totalBooks, int bookScannedPerDay, ArrayList<Integer> bookID, int libID){
+    Library( int libID,int signUpDays, int bookScannedPerDay, ArrayList<Integer> bookID){
         this.bookScannedPerDay = bookScannedPerDay;
-        this.totalBooks = totalBooks;
+        this.totalBooks = bookID.size();
         this.signUpDays = signUpDays;
         this.bookID = bookID;
         this.isSignedUp = false;
@@ -48,7 +48,6 @@ public class Library extends Main{
     int libraryAvailableDays(){
         return availableDays;
     }
-    //ok1
     public void signUp(){
             isSignedUp=true;
             signUpInitial=currentDay;
