@@ -10,7 +10,8 @@ public class Library extends Main{
     ArrayList<Integer> bookID;
     int totalBooks, signUpDays, bookScannedPerDay;
     boolean isSignedUp;
-    int lidID;
+    int signedUpDay;
+    int libID;
 
 
     Library(int signUpDays, int totalBooks, int bookScannedPerDay, ArrayList<Integer> bookID){
@@ -20,6 +21,8 @@ public class Library extends Main{
         this.bookID = bookID;
         this.isSignedUp = false;
     }
+
+
     int bookScore(){
         int avaliableDays = totalDays - signUpDays;
         int booksScannedInTotalAvaliableDays = avaliableDays*bookScannedPerDay;
@@ -34,7 +37,13 @@ public class Library extends Main{
             bookScore = bookScore+bookID[i];
         return bookScore;
     }
+
     int LibraryScore(){
         return (bookScore()/signUpDays);
     }
+
+    public int getLibID() {
+        return libID;
+    }
+
 }
