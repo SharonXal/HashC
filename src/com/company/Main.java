@@ -12,5 +12,6 @@ public class Main {
         //here in the Library constructor method, the place for bookId is vacant, it's for when input is recieved.
         Library lib = new Library(40,60,6, );
         System.out.println("Library Score = "+lib.LibraryScore());
+	    //TODO WORK
     }
 }
