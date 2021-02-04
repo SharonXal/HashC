@@ -20,7 +20,7 @@ public class Library extends Main{
         this.bookID = bookID;
         this.isSignedUp = false;
         this.libID = libID;
-        availableDays=totalDays;
+        availableDays=D;
     }
 
 
@@ -54,7 +54,7 @@ public class Library extends Main{
             signUpInitial=currentDay;
             signUpFinal=currentDay+signUpDays;
             currentDay+=signUpDays;
-            availableDays = totalDays - signUpFinal;
+            availableDays = D - signUpFinal;
         }
     }
 
