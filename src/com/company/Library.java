@@ -10,6 +10,7 @@ public class Library extends Main{
     boolean isSignedUp;
     int signUpInitial, signUpFinal;
     int libID;
+    int availableDays;
 
 
     Library(int signUpDays, int totalBooks, int bookScannedPerDay, ArrayList<Integer> bookID, int libID){
@@ -19,41 +20,41 @@ public class Library extends Main{
         this.bookID = bookID;
         this.isSignedUp = false;
         this.libID = libID;
+        availableDays=totalDays;
     }
 
 
-    int bookScore(){
-        int avaliableDays = totalDays - signUpDays;
-        int booksScannedInTotalAvaliableDays = avaliableDays*bookScannedPerDay;
-        //Arrays.sort(bookID);
-        int[] booksToBeScanned = new int[booksScannedInTotalAvaliableDays];
-        for(int i=booksToBeScanned.length;i>0;i--){
-            booksToBeScanned[i] = bookID.get(i);
-        }
-        this.bookID = booksToBeScanned.clone();
-        int bookScore = 0;
-        for(int i=0;i<bookID.length;i++)
-            bookScore = bookScore+bookID[i];
-        return bookScore;
-    }
+//    int bookScore(){
+//        int avaliableDays = totalDays - signUpDays;
+//        int booksScannedInTotalAvaliableDays = avaliableDays*bookScannedPerDay;
+//        //Arrays.sort(bookID);
+//        int[] booksToBeScanned = new int[booksScannedInTotalAvaliableDays];
+//        for(int i=booksToBeScanned.length;i>0;i--){
+//            booksToBeScanned[i] = bookID.get(i);
+//        }
+//        this.bookID = booksToBeScanned.clone();
+//        int bookScore = 0;
+//        for(int i=0;i<bookID.length;i++)
+//            bookScore = bookScore+bookID[i];
+//        return bookScore;
+//    }
 
-    int LibraryScore(){
-        return (bookScore()/signUpDays);
-    }
+//    int LibraryScore(){
+//        return (bookScore()/signUpDays);
+//    }
 
     public int getLibID() {
         return libID;
     }
-    int libraryAvaliableDays(){
-        totalDays = totalDays - signUpFinal;
-        return totalDays;
+    int libraryAvailableDays(){
+        return availableDays;
     }
     public void signUp(){
             isSignedUp=true;
             signUpInitial=currentDay;
             signUpFinal=currentDay+signUpDays;
             currentDay+=signUpDays;
+            availableDays = totalDays - signUpFinal;
         }
     }
 
-}
