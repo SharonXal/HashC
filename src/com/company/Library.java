@@ -17,7 +17,7 @@ public class Library extends Main{
         //assuming that the array containing book ids is already given
         this.bookID = bookID.clone();
         //in the above process i am cloning the array of the book id that will be given as input in another array for further calculations
-        //the process for getting book id is shown below, you can use someother method but pls make sure that it's an array.
+        //the process for getting book id is shown below, you can use some other method but pls make sure that it's an array.
         //this.bookID = new int[totalBooks];//this is the process of getting the book id and should will be done during the input,
         //make sure to get the id in array and give that array for this process.
         //also input all the data like bookId and etc in the Main class
@@ -32,7 +32,7 @@ public class Library extends Main{
         Arrays.sort(bookID);
         //making an array which will hold the books to be scanned in the given days according to their score
         int[] booksToBeScanned = new int[booksScannedInTotalAvaliableDays];
-        for(int i=0;i<booksToBeScanned.length;i++){
+        for(int i=booksToBeScanned.length;i>0;i--){
             booksToBeScanned[i] = bookID[i];
         }
         //copying booksToBeScanned array into bookID array
