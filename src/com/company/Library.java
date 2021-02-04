@@ -7,7 +7,7 @@ import java.util.Arrays;
 public class Library extends Main{
 
 
-    ArrayList<Integer> bookID;
+    int[] bookID;
     int totalBooks, signUpDays, bookScannedPerDay;
     boolean isSignedUp;
     int signedUpDay;
@@ -35,9 +35,9 @@ public class Library extends Main{
         this.bookID = booksToBeScanned.clone();
         int bookScore = 0;
         for(int i=0;i<bookID.length;i++)
-            bookScore = bookScore+bookID[i];
+            bookScore = bookScore+ bookID.get(i);
         return bookScore;
-        totalDays = totalDays - avaliableDays;//in main function totalDays will be updated for next library
+        totalDays = totalDays - signUpDays;//in main function totalDays will be updated for next library
     }
 
     int LibraryScore(){
