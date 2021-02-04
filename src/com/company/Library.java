@@ -5,6 +5,8 @@ import java.util.Arrays;
 
 public class Library extends Main{
 
+    //LIBRARY CLASS
+    //WORKING...........
     int totalBooks, signUpDays, bookScannedPerDay;
     int[] bookID;//assuming that the bookId is also the book's score
     boolean isSignedUp;
