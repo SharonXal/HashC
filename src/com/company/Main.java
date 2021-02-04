@@ -2,7 +2,7 @@ package com.company;
 
 public class Main {
 
-    static byte totalDays;
+    int totalDays;
     public static void main(String[] args) {
 
     }
