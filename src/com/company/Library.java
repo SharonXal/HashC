@@ -28,14 +28,13 @@ public class Library extends Main{
         //Arrays.sort(bookID);
         int[] booksToBeScanned = new int[booksScannedInTotalAvaliableDays];
         for(int i=booksToBeScanned.length;i>0;i--){
-            booksToBeScanned[i] = bookID[i];
+            booksToBeScanned[i] = bookID.get(i);
         }
         this.bookID = booksToBeScanned.clone();
         int bookScore = 0;
         for(int i=0;i<bookID.length;i++)
             bookScore = bookScore+bookID[i];
         return bookScore;
-        totalDays = totalDays - avaliableDays;//in main function totalDays will be updated for next library
     }
 
     int LibraryScore(){
@@ -44,6 +43,10 @@ public class Library extends Main{
 
     public int getLibID() {
         return libID;
+    }
+    int libraryAvaliableDays(){
+        totalDays = totalDays - signUpFinal;
+        return totalDays;
     }
     public void signUp(){
         if(!isSigningUp){
