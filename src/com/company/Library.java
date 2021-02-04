@@ -1,29 +1,29 @@
 package com.company;
 
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Library extends Main{
 
 
+    ArrayList<Integer> bookID;
     int totalBooks, signUpDays, bookScannedPerDay;
-    int[] bookID;//assuming that the bookId is also the book's score
     boolean isSignedUp;
+    int lidID;
 
 
-
-    //initializing the necessary requirements for a Library
-    Library(int signUpDays, int totalBooks, int bookScannedPerDay, int bookID[]){
+    Library(int signUpDays, int totalBooks, int bookScannedPerDay, ArrayList<Integer> bookID){
         this.bookScannedPerDay = bookScannedPerDay;
         this.totalBooks = totalBooks;
         this.signUpDays = signUpDays;
-        this.bookID = bookID.clone();
+        this.bookID = bookID;
         this.isSignedUp = false;
     }
     int bookScore(){
         int avaliableDays = totalDays - signUpDays;
         int booksScannedInTotalAvaliableDays = avaliableDays*bookScannedPerDay;
-        Arrays.sort(bookID);
+        //Arrays.sort(bookID);
         int[] booksToBeScanned = new int[booksScannedInTotalAvaliableDays];
         for(int i=booksToBeScanned.length;i>0;i--){
             booksToBeScanned[i] = bookID[i];
