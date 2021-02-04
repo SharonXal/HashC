@@ -55,5 +55,10 @@ public class Library extends Main{
             currentDay+=signUpDays;
             availableDays = D - signUpFinal;
         }
+
+        public ArrayList<Integer> getBooksForScanning(){
+
+        }
+
     }
 
