@@ -19,8 +19,8 @@ public class Main {
         Library lib1 = new Library(3,3,1,bookID1,1);
 
         ArrayList<Library> libraries = new ArrayList<>();
-        libraries.add(lib0);
         libraries.add(lib1);
+        libraries.add(lib0);
         for(Library lib : libraries){
             lib.signUp();
         }
