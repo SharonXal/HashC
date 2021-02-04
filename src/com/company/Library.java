@@ -1,16 +1,14 @@
 package com.company;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Library extends Main{
 
 
-    int[] bookID;
+    ArrayList<Integer> bookID;
     int totalBooks, signUpDays, bookScannedPerDay;
     boolean isSignedUp;
-    int signedUpDay;
+    int signUpInitial, signUpFinal;
     int libID;
 
 
@@ -35,9 +33,9 @@ public class Library extends Main{
         this.bookID = booksToBeScanned.clone();
         int bookScore = 0;
         for(int i=0;i<bookID.length;i++)
-            bookScore = bookScore+ bookID.get(i);
+            bookScore = bookScore+bookID[i];
         return bookScore;
-        totalDays = totalDays - signUpDays;//in main function totalDays will be updated for next library
+        totalDays = totalDays - avaliableDays;//in main function totalDays will be updated for next library
     }
 
     int LibraryScore(){
@@ -46,6 +44,15 @@ public class Library extends Main{
 
     public int getLibID() {
         return libID;
+    }
+    public void signUp(){
+        if(!isSigningUp){
+            isSignedUp=true;
+            signUpInitial=currentDay;
+            signUpFinal=currentDay+signUpDays;
+            currentDay+=signUpDays;
+            isSigningUp=false;
+        }
     }
 
 }
