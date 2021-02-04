@@ -10,7 +10,7 @@ public class Library extends Main{
     boolean isSignedUp;
     int signUpInitial, signUpFinal;
     int libID;
-    int availableDays;//any
+    int availableDays;//any1
 
     Library(int signUpDays, int totalBooks, int bookScannedPerDay, ArrayList<Integer> bookID, int libID){
         this.bookScannedPerDay = bookScannedPerDay;
