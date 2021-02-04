@@ -14,12 +14,13 @@ public class Library extends Main{
     int libID;
 
 
-    Library(int signUpDays, int totalBooks, int bookScannedPerDay, ArrayList<Integer> bookID){
+    Library(int signUpDays, int totalBooks, int bookScannedPerDay, ArrayList<Integer> bookID, int libID){
         this.bookScannedPerDay = bookScannedPerDay;
         this.totalBooks = totalBooks;
         this.signUpDays = signUpDays;
         this.bookID = bookID;
         this.isSignedUp = false;
+        this.libID = libID;
     }
 
 
@@ -36,6 +37,7 @@ public class Library extends Main{
         for(int i=0;i<bookID.length;i++)
             bookScore = bookScore+bookID[i];
         return bookScore;
+        totalDays = totalDays - avaliableDays;//in main function totalDays will be updated for next library
     }
 
     int LibraryScore(){
