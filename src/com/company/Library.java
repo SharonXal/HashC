@@ -49,12 +49,10 @@ public class Library extends Main{
         return totalDays;
     }
     public void signUp(){
-        if(!isSigningUp){
             isSignedUp=true;
             signUpInitial=currentDay;
             signUpFinal=currentDay+signUpDays;
             currentDay+=signUpDays;
-            isSigningUp=false;
         }
     }
 
