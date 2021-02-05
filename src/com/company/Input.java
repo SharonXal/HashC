@@ -63,7 +63,7 @@ public class Input {
                 while ((tmp = fr.readLine()) != null) {
                     tmpArr = tokens(tmp);
                     tmp = fr.readLine();
-                    libraries.add(new Library(i++, tmpArr.get(0), tmpArr.get(2), tokens(tmp)));
+                    libraries.add(new Library(i++, tmpArr.get(1), tmpArr.get(2), tokens(tmp)));
                 }
             } catch (Exception e) {
                 e.printStackTrace();
