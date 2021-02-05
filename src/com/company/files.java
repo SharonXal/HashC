@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class files
@@ -47,7 +48,7 @@ public class files
         String tmp;
         int[] tmpArr;
         int i;
-        library tmpLib;
+        Library tmpLib;
         tmpArr=tokens(fr.readLine());
         /* initializing B,L,D. */
         B=tmpArr[0];
@@ -70,7 +71,7 @@ public class files
             tmpLib.initialize();*/
             tmp=fr.readLine();
             //tmpLib.ar=tokens(tmp);
-            libraries.add(new Library(i++,tmpArr[1],tmpArr[2],Arrays.asList(tokens(tmp))));
+            libraries.add(new Library(i++,tmpArr[1],tmpArr[2], Arrays.asList(tokens(tmp))));
             /*if(lb==null)
             {
                 lb=new library(tmpLib);
