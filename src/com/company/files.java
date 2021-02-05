@@ -1,50 +1,52 @@
 package com.company;
 
-class library
-{
-    int N,T,M;
-    int ar[];
-    library next;
-    library(){}
-    library(library cl)
-    {
-        int i;
-        this.N=cl.N;
-        this.T=cl.T;
-        this.M=cl.M;
-        initialize();
-        for(i=0;i<cl.ar.length;i++)
-            this.ar[i]=cl.ar[i];
-        this.next=cl.next;
-    }
-    void initialize()
-    {
-        this.ar=new int[N];
-    }
-    void addBooks(int[] tmp)
-    {
-        this.ar=tmp;
-    }
-    library get(int i)
-    {
-        library tmp;
-        tmp=this;
-        int j=0;
-        do {
-            if(j==i)
-                return tmp;
-        }while((tmp=this.next)!=null);
-        return null;
-    }
-    void push(library tmp)
-    {
-        library tmp1;
-        tmp1=this;
-        while(tmp1.next!=null)
-            tmp1=tmp1.next;
-        tmp1.next=new library(tmp);
-    }
-}
+import java.io.BufferedReader;
+
+//class library
+//{
+//    int N,T,M;
+//    int ar[];
+//    library next;
+//    library(){}
+//    library(library cl)
+//    {
+//        int i;
+//        this.N=cl.N;
+//        this.T=cl.T;
+//        this.M=cl.M;
+//        initialize();
+//        for(i=0;i<cl.ar.length;i++)
+//            this.ar[i]=cl.ar[i];
+//        this.next=cl.next;
+//    }
+//    void initialize()
+//    {
+//        this.ar=new int[N];
+//    }
+//    void addBooks(int[] tmp)
+//    {
+//        this.ar=tmp;
+//    }
+//    library get(int i)
+//    {
+//        library tmp;
+//        tmp=this;
+//        int j=0;
+//        do {
+//            if(j==i)
+//                return tmp;
+//        }while((tmp=this.next)!=null);
+//        return null;
+//    }
+//    void push(library tmp)
+//    {
+//        library tmp1;
+//        tmp1=this;
+//        while(tmp1.next!=null)
+//            tmp1=tmp1.next;
+//        tmp1.next=new library(tmp);
+//    }
+//}
 public class files
 {
     String FILENAME="/books.txt"; //name of the file to read from.

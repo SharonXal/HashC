@@ -8,8 +8,8 @@ import java.util.Collections;
 public class Main {
 
     static int currentDay=0;
-    static final int D=7;
-    static ArrayList<Library> libraries;
+    static  int B,L,D;
+    static ArrayList<Library> libraries, bookScores;
 
     public static void main(String[] args) {
         ArrayList<Integer> bookID0 = new ArrayList<>();
