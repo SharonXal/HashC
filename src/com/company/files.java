@@ -1,7 +1,5 @@
 package com.company;
 
-import java.io.*;
-import java.util.*;
 class library
 {
     int N,T,M;
@@ -110,6 +108,7 @@ public class files
             tmpLib.initialize();
             tmp=fr.readLine();
             tmpLib.ar=tokens(tmp);
+
             if(lb==null)
             {
                 lb=new library(tmpLib);
@@ -124,13 +123,5 @@ public class files
     void close()throws IOException
     {
         fr.close();
-    }
-
-    public static void main(String args[])throws IOException
-    {
-        files ob=new files();
-        ob.loadFile();
-        ob.makeEntry();
-        ob.close();
     }
 }
