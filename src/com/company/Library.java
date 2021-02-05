@@ -1,7 +1,6 @@
 package com.company;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 
 public class Library extends Main{
@@ -67,9 +66,6 @@ public class Library extends Main{
         public  void scan(){
             Collections.sort(bookID, Collections.reverseOrder());
             int totalBooksCanBeScanned = availableDays*bookScannedPerDay;
-            for(Library libTemp : libraries){
-
-            }
 
 
             if(totalBooksCanBeScanned>totalBooks){
@@ -91,5 +87,14 @@ public class Library extends Main{
         public ArrayList<Integer> getBooksForScanning(){
             return booksScanned;
         }
-//TODO Remove books
+
+        public ArrayList<Integer> getCommons(ArrayList<Integer> other){
+            ArrayList<Integer> commons = new ArrayList<>();
+            for(int x: bookID){
+                if(other.contains(x)){
+                    commons.add(x);
+                }
+            }
+            return commons;
+        }
     }
