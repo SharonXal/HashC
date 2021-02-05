@@ -46,7 +46,7 @@ public class Main {
             System.out.println(x+" ,");
         }
 
-        ArrayList<Integer> commons = lib1.getCommons(lib0.bookID);
+        ArrayList<Integer> commons = lib1.getCommons(lib0);
 
 
     }

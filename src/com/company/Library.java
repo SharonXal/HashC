@@ -87,10 +87,10 @@ public class Library extends Main{
             return booksScanned;
         }
 
-        public ArrayList<Integer> getCommons(ArrayList<Integer> other){
+        public ArrayList<Integer> getCommons(Library otherLib){
             ArrayList<Integer> commons = new ArrayList<>();
             for(int x: bookID){
-                if(other.contains(x)){
+                if(otherLib.bookID.contains(x)){
                     commons.add(x);
                 }
             }
