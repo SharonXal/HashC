@@ -68,11 +68,13 @@ public class Library extends Main{
             if(totalBooksCanBeScanned>totalBooks){
                 for(int i=0;i<totalBooks;i++){
                     booksScanned.add(bookID.get(i));
+                    availableDays--;
                 }
             }
             else{
                 for(int i=0;i<totalBooksCanBeScanned;i++){
                     booksScanned.add(bookID.get(i));
+                    availableDays--;
                 }
             }
 
