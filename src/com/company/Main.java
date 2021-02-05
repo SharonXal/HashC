@@ -25,7 +25,7 @@ public class Main {
         bookID1.add(5);
 
         Library lib0 = new Library(0,2,2, bookID0);
-        Library lib1 = new Library(1    ,3,1,bookID1);
+        Library lib1 = new Library(1,3,1,bookID1);
 
         libraries = new ArrayList<>();
         libraries.add(lib1);
@@ -43,6 +43,9 @@ public class Main {
         for(int x: lib1.getBooksForScanning()){
             System.out.println(x+" ,");
         }
+
+        ArrayList<Integer> commons = lib1.getCommons(lib0.bookID);
+
 
     }
 }
