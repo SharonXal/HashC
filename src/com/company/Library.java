@@ -96,6 +96,7 @@ public class Library extends Main{
         }
 
         public ArrayList<Integer> updatedBookList(ArrayList<Integer> other){
+        //TODO create and return new array list
             for(int i: booksScanned){
                 if(other.contains(i)){
                     other.remove(i);
