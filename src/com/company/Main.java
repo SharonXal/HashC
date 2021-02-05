@@ -9,6 +9,7 @@ public class Main {
 
     static int currentDay=0;
     static final int D=7;
+    static ArrayList<Library> libraries;
 
     public static void main(String[] args) {
         ArrayList<Integer> bookID0 = new ArrayList<>();
@@ -26,7 +27,7 @@ public class Main {
         Library lib0 = new Library(0,2,2, bookID0);
         Library lib1 = new Library(1    ,3,1,bookID1);
 
-        ArrayList<Library> libraries = new ArrayList<>();
+        libraries = new ArrayList<>();
         libraries.add(lib1);
         libraries.add(lib0);
         for(Library lib : libraries){

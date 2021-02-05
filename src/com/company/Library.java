@@ -62,6 +62,8 @@ public class Library extends Main{
             currentDay+=signUpDays;
             availableDays = D - signUpFinal;
         }
+
+
         public  void scan(){
             Collections.sort(bookID, Collections.reverseOrder());
             int totalBooksCanBeScanned = availableDays*bookScannedPerDay;
@@ -79,6 +81,7 @@ public class Library extends Main{
             }
 
         }
+
 
         public ArrayList<Integer> getBooksForScanning(){
             return booksScanned;
