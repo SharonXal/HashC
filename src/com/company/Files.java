@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class files
+public class Files
 {
     String FILENAME="/books.txt"; //name of the file to read from.
     BufferedReader fr; //reads input from file.

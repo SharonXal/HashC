@@ -33,6 +33,7 @@ public class Main {
         Library lib1 = new Library(1,3,1,bookID1);
         Library lib2 = new Library(2,1,1,bookID2);
 
+        Files ob = new Files();
         libraries = new ArrayList<>();
         libraries.add(lib1);
         libraries.add(lib0);
