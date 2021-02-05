@@ -46,13 +46,13 @@ public class files
         String tmp;
         int[] tmpArr;
         int i;
-        library tmpLib;
+        Library tmpLib;
         tmpArr=tokens(fr.readLine());
         /* initializing B,L,D. */
         B=tmpArr[0];
         L=tmpArr[1];
         D=tmpArr[2];
-        scores=new int[B];
+        bookScores= new ArrayList<>();
         tmp=fr.readLine();
         tmpArr=tokens(tmp);
         tmpLib=(lb==null)?new library():lb;
