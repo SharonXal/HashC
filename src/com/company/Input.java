@@ -18,6 +18,7 @@ public class Input {
 
         ArrayList<Integer> tokens(String a)//converts a line with multiple numbers to a int array[]
         {
+
             int i, n = 1;
             char c;
             ArrayList<Integer> ar = new ArrayList<>();
