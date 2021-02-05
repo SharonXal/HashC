@@ -63,21 +63,21 @@ public class files
         while((tmp=fr.readLine())!=null)
         {
             tmpArr=tokens(tmp);
-            tmpLib.N=tmpArr[0];
+            /*tmpLib.N=tmpArr[0];
             tmpLib.T=tmpArr[1];
             tmpLib.M=tmpArr[2];
-            tmpLib.initialize();
+            tmpLib.initialize();*/
             tmp=fr.readLine();
-            tmpLib.ar=tokens(tmp);
+            //tmpLib.ar=tokens(tmp);
             libraries.add(new Library(tmpArr[0],tmpArr[1],tmpArr[2],Arrays.asList(tokens(tmp))));
-            if(lb==null)
+            /*if(lb==null)
             {
                 lb=new library(tmpLib);
             }
             else
             {
                 lb.push(tmpLib);
-            }
+            }*/
         }
 
     }
