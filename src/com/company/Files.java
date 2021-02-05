@@ -42,17 +42,18 @@ public class Files
         }
 
     }
-    void makeEntry()throws IOException //makes required entry from file.
+    void makeEntry() //makes required entry from file.
     {
         String tmp;
         ArrayList<Integer> tmpArr;
         int i;
-        tmpArr=tokens(fr.readLine());
-        /* initializing B,L,D. */
-        B=tmpArr.get(0);
-        L=tmpArr.get(1);//
-        D=tmpArr.get(2);
-        tmp=fr.readLine();
+        try {
+            tmpArr = tokens(fr.readLine());
+            /* initializing B,L,D. */
+            B = tmpArr.get(0);
+            L = tmpArr.get(1);//
+            D = tmpArr.get(2);
+            tmp = fr.readLine();
         tmpArr=tokens(tmp);
         for(i=0;i<B;i++)
             bookScores.add(tmpArr.get(i));
@@ -64,7 +65,8 @@ public class Files
             tmp=fr.readLine();
             libraries.add(new Library(i++,tmpArr.get(0),tmpArr.get(2), tokens(tmp)));
         }
-
+        }
+        catch(Exception e){}
     }
     void close()throws IOException
     {
