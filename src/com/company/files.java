@@ -11,7 +11,8 @@ public class files
     String FILENAME="/books.txt"; //name of the file to read from.
     BufferedReader fr; //reads input from file.
     int B=0,L=0,D=0;
-    ArrayList<Library> libraries, bookScores;
+    ArrayList<Library> libraries;
+    ArrayList<Integer> bookScores;
 
     int[] tokens(String a)//converts a line with multiple numbers to a int array[]
     {
@@ -46,18 +47,18 @@ public class files
         String tmp;
         int[] tmpArr;
         int i;
-        Library tmpLib;
+        library tmpLib;
         tmpArr=tokens(fr.readLine());
         /* initializing B,L,D. */
         B=tmpArr[0];
         L=tmpArr[1];
         D=tmpArr[2];
-        bookScores= new ArrayList<>();
+        //scores=new int[B];
         tmp=fr.readLine();
         tmpArr=tokens(tmp);
-        tmpLib=(lb==null)?new library():lb;
+        //tmpLib=(lb==null)?new library():lb;
         for(i=0;i<B;i++)
-            scores[i]=tmpArr[i];
+            bookScores.add(tmpArr[i]);
 
         while((tmp=fr.readLine())!=null)
         {
