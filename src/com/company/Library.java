@@ -87,6 +87,14 @@ public class Library extends Main{
             return booksScanned;
         }
 
+        double libraryScore(){
+            int bookScore = 0;
+            for(int i : booksScanned){
+                bookScore += i;
+            }
+            return (double)bookScore/(double)signUpDays;
+        }
+
         public ArrayList<Integer> updatedBookList(ArrayList<Integer> other){
             for(int i: booksScanned){
                 if(other.contains(i)){
