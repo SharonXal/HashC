@@ -59,6 +59,7 @@ public class files
         //tmpLib=(lb==null)?new library():lb;
         for(i=0;i<B;i++)
             bookScores.add(tmpArr[i]);
+        i=0;
 
         while((tmp=fr.readLine())!=null)
         {
@@ -69,7 +70,7 @@ public class files
             tmpLib.initialize();*/
             tmp=fr.readLine();
             //tmpLib.ar=tokens(tmp);
-            libraries.add(new Library(tmpArr[0],tmpArr[1],tmpArr[2],Arrays.asList(tokens(tmp))));
+            libraries.add(new Library(i++,tmpArr[1],tmpArr[2],Arrays.asList(tokens(tmp))));
             /*if(lb==null)
             {
                 lb=new library(tmpLib);
