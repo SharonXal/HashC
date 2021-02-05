@@ -56,4 +56,5 @@ public class Main {
     }
 
     //hello world
+    //TODO arrange and send libraries according to their score calculated in function libraryScore
 }
