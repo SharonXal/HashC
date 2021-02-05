@@ -71,7 +71,7 @@ public class files
             tmpLib.initialize();*/
             tmp=fr.readLine();
             //tmpLib.ar=tokens(tmp);
-            libraries.add(i++,tmpArr[1],tmpArr[2], Arrays.asList(tokens(tmp)));
+            libraries.add(new Library(i++,tmpArr[1],tmpArr[2], Arrays.asList(tokens(tmp))));
             /*if(lb==null)
             {
                 lb=new library(tmpLib);
