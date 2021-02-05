@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class files
@@ -34,7 +33,7 @@ public class files
     void loadFile() //to load the file.
     {
         try {
-            fr = new BufferedReader(new FileReader("C:\\Users\\LUCKY\\IdeaProjects\\book\\src\\books.txt"));
+            fr = new BufferedReader(new FileReader(FILENAME));
         }
         catch(Exception e)
         {
@@ -47,16 +46,13 @@ public class files
         String tmp;
         ArrayList<Integer> tmpArr;
         int i;
-        Library tmpLib;
         tmpArr=tokens(fr.readLine());
         /* initializing B,L,D. */
         B=tmpArr.get(0);
         L=tmpArr.get(1);//
         D=tmpArr.get(2);
-        //scores=new int[B];
         tmp=fr.readLine();
         tmpArr=tokens(tmp);
-        //tmpLib=(lb==null)?new library():lb;
         for(i=0;i<B;i++)
             bookScores.add(tmpArr.get(i));
         i=0;
@@ -64,21 +60,8 @@ public class files
         while((tmp=fr.readLine())!=null)
         {
             tmpArr=tokens(tmp);
-            /*tmpLib.N=tmpArr[0];
-            tmpLib.T=tmpArr[1];
-            tmpLib.M=tmpArr[2];
-            tmpLib.initialize();*/
             tmp=fr.readLine();
-            //tmpLib.ar=tokens(tmp);
             libraries.add(new Library(i++,tmpArr.get(0),tmpArr.get(2), tokens(tmp)));
-            /*if(lb==null)
-            {
-                lb=new library(tmpLib);
-            }
-            else
-            {
-                lb.push(tmpLib);
-            }*/
         }
 
     }
