@@ -67,6 +67,11 @@ public class Library extends Main{
         public  void scan(){
             Collections.sort(bookID, Collections.reverseOrder());
             int totalBooksCanBeScanned = availableDays*bookScannedPerDay;
+            for(Library libTemp : libraries){
+
+            }
+
+
             if(totalBooksCanBeScanned>totalBooks){
                 for(int i=0;i<totalBooks;i++){
                     booksScanned.add(bookID.get(i));
