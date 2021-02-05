@@ -72,20 +72,3 @@ public class Files
     }
 
 
-   /* ```class output
-{
-    int A,Y,K,i;
-    PrintWriter pw=new PrintWriter(new BufferedWriter(new FileWriter("SubmissionFile.txt"));//to create the submission file
-	System.out.println("//Details of the book")
-            for(i=0;i<A;i++)//A=the no. of libraries to sign up
-    {
-        System.out.print("The Id of the library is="Y[i]\t);//Y=the ID of the library
-        System.out.println("The no. of books to be scaned from library Y="+K[i]);//K=the no. of books to be scaned from library Y
-        System.out.println(/*function of the ID's of the book[i]*/);
-    }
-
-}
-
-```
-}
-*/
