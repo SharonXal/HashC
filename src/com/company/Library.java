@@ -83,7 +83,6 @@ public class Library extends Main{
 
         }
 
-
         public ArrayList<Integer> getBooksForScanning(){
             return booksScanned;
         }

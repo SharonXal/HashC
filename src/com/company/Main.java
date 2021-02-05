@@ -13,17 +13,19 @@ public class Main {
 
     public static void main(String[] args) {
         ArrayList<Integer> bookID0 = new ArrayList<>();
-        bookID0.add(0);
         bookID0.add(1);
-        bookID0.add(2);
-        bookID0.add(3);
-        bookID0.add(4);
+        bookID0.add(11);
+        bookID0.add(211);
+        bookID0.add(311);
+        bookID0.add(41);
+        bookID0.add(412);bookID0.add(411);bookID0.add(413);bookID0.add(415);bookID0.add(416);bookID0.add(4231);bookID0.add(4141);
         ArrayList<Integer> bookID1 = new ArrayList<>();
-        bookID1.add(0);
-        bookID1.add(2);
-        bookID1.add(3);
-        bookID1.add(5);
-
+        bookID1.add(01);
+        bookID1.add(211);
+        bookID1.add(321);
+        bookID1.add(52);
+        bookID1.add(11);
+        bookID1.add(32);bookID1.add(411);bookID1.add(413);bookID1.add(456);bookID1.add(6868);bookID1.add(90);bookID1.add(4141);
         Library lib0 = new Library(0,2,2, bookID0);
         Library lib1 = new Library(1,3,1,bookID1);
 
