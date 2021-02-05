@@ -8,7 +8,7 @@ import java.util.Collections;
 public class Main {
 
     static int currentDay=0;
-    static final int D=6;
+    static final int D=7;
 
     public static void main(String[] args) {
         ArrayList<Integer> bookID0 = new ArrayList<>();
@@ -31,6 +31,7 @@ public class Main {
         libraries.add(lib0);
         for(Library lib : libraries){
             lib.signUp();
+            lib.scan();
         }
 
         System.out.println("Library 0 : ");

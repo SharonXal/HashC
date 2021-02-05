@@ -13,6 +13,7 @@ public class Library extends Main{
     int signUpInitial, signUpFinal;
     int libID;
     int availableDays;
+    ArrayList<Integer> booksScanned;
 
 
     Library( int libID,int signUpDays, int bookScannedPerDay, ArrayList<Integer> bookID){
@@ -23,6 +24,7 @@ public class Library extends Main{
         this.isSignedUp = false;
         this.libID = libID;
         availableDays=D;
+        booksScanned = new ArrayList<>();
     }
 
 
@@ -60,22 +62,24 @@ public class Library extends Main{
             currentDay+=signUpDays;
             availableDays = D - signUpFinal;
         }
-
-        public ArrayList<Integer> getBooksForScanning(){
+        public  void scan(){
             Collections.sort(bookID, Collections.reverseOrder());
-            ArrayList<Integer> booksForScanning = new ArrayList<>();
             int totalBooksCanBeScanned = availableDays*bookScannedPerDay;
             if(totalBooksCanBeScanned>totalBooks){
                 for(int i=0;i<totalBooks;i++){
-                    booksForScanning.add(bookID.get(i));
+                    booksScanned.add(bookID.get(i));
                 }
             }
             else{
                 for(int i=0;i<totalBooksCanBeScanned;i++){
-                    booksForScanning.add(bookID.get(i));
+                    booksScanned.add(bookID.get(i));
                 }
             }
-            return booksForScanning;
+
+        }
+
+        public ArrayList<Integer> getBooksForScanning(){
+            return booksScanned;
         }
 //TODO Remove books
     }
