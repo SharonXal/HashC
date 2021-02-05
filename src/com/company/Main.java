@@ -38,15 +38,14 @@ public class Main {
 //        libraries.add(lib0);
 //        libraries.add(lib2);
 
-
         Input ob = new Input();
         ob.loadFile();
         ob.makeEntry();
-//        B=ob.B;
-//        L=ob.L;
-//        D=ob.D;
-//        libraries = ob.libraries;
-//        bookScores = ob.bookScores;
+        B=ob.B;
+        L=ob.L;
+        D=ob.D;
+        libraries = ob.libraries;
+        bookScores = ob.bookScores;
 
 //        for(Library lib : libraries){
 //            lib.signUp();
