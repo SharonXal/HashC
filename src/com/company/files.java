@@ -1,59 +1,17 @@
 package com.company;
 
 import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
 
-//class library
-//{
-//    int N,T,M;
-//    int ar[];
-//    library next;
-//    library(){}
-//    library(library cl)
-//    {
-//        int i;
-//        this.N=cl.N;
-//        this.T=cl.T;
-//        this.M=cl.M;
-//        initialize();
-//        for(i=0;i<cl.ar.length;i++)
-//            this.ar[i]=cl.ar[i];
-//        this.next=cl.next;
-//    }
-//    void initialize()
-//    {
-//        this.ar=new int[N];
-//    }
-//    void addBooks(int[] tmp)
-//    {
-//        this.ar=tmp;
-//    }
-//    library get(int i)
-//    {
-//        library tmp;
-//        tmp=this;
-//        int j=0;
-//        do {
-//            if(j==i)
-//                return tmp;
-//        }while((tmp=this.next)!=null);
-//        return null;
-//    }
-//    void push(library tmp)
-//    {
-//        library tmp1;
-//        tmp1=this;
-//        while(tmp1.next!=null)
-//            tmp1=tmp1.next;
-//        tmp1.next=new library(tmp);
-//    }
-//}
 public class files
 {
     String FILENAME="/books.txt"; //name of the file to read from.
     BufferedReader fr; //reads input from file.
-    int B,L,D; //for books, libraries and days.
-    int[] scores;
-    library lb=null;
+    int B=0,L=0,D=0;
+    ArrayList<Library> libraries, bookScores;
 
     int[] tokens(String a)//converts a line with multiple numbers to a int array[]
     {
