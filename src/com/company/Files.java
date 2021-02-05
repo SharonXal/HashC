@@ -7,41 +7,39 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Files
-{
-    String FILENAME="/books.txt"; //name of the file to read from.
+public class Files {
+    String FILENAME = "/books.txt"; //name of the file to read from.
     BufferedReader fr; //reads input from file.
-    int B=0,L=0,D=0;
+    int B = 0, L = 0, D = 0;
     ArrayList<Library> libraries;
     ArrayList<Integer> bookScores;
 
     ArrayList<Integer> tokens(String a)//converts a line with multiple numbers to a int array[]
     {
-        int i,n=1;
+        int i, n = 1;
         char c;
         ArrayList<Integer> ar = new ArrayList<>();
-        Scanner sc=new Scanner(a);
-        for(i=0;i<a.length();i++)
-        {
-            c=a.charAt(i);
-            if(c==' ')
+        Scanner sc = new Scanner(a);
+        for (i = 0; i < a.length(); i++) {
+            c = a.charAt(i);
+            if (c == ' ')
                 n++;
         }
-        for(i=0;i<n;i++)
+        for (i = 0; i < n; i++)
             ar.add(sc.nextInt());
         return ar;
     }
+
     void loadFile() //to load the file.
     {
         try {
             fr = new BufferedReader(new FileReader(FILENAME));
-        }
-        catch(Exception e)
-        {
+        } catch (Exception e) {
             System.out.println("File not found !");
         }
 
     }
+
     void makeEntry() //makes required entry from file.
     {
         String tmp;
@@ -54,23 +52,23 @@ public class Files
             L = tmpArr.get(1);//
             D = tmpArr.get(2);
             tmp = fr.readLine();
-        tmpArr=tokens(tmp);
-        for(i=0;i<B;i++)
-            bookScores.add(tmpArr.get(i));
-        i=0;
+            tmpArr = tokens(tmp);
+            for (i = 0; i < B; i++)
+                bookScores.add(tmpArr.get(i));
+            i = 0;
 
-        while((tmp=fr.readLine())!=null)
-        {
-            tmpArr=tokens(tmp);
-            tmp=fr.readLine();
-            libraries.add(new Library(i++,tmpArr.get(0),tmpArr.get(2), tokens(tmp)));
+            while ((tmp = fr.readLine()) != null) {
+                tmpArr = tokens(tmp);
+                tmp = fr.readLine();
+                libraries.add(new Library(i++, tmpArr.get(0), tmpArr.get(2), tokens(tmp)));
+            }
+        } catch (Exception e) {
         }
-        }
-        catch(Exception e){}
     }
-    void close()throws IOException
-    {
+
+    void close() throws IOException {
         fr.close();
     }
+}
 
 
