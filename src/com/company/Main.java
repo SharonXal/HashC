@@ -39,7 +39,7 @@ public class Main {
 //        libraries.add(lib2);
 
 
-        Files ob = new Files();
+        Input ob = new Input();
         ob.loadFile();
         ob.makeEntry();
         B=ob.B;
