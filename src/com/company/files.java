@@ -15,11 +15,11 @@ public class files
     ArrayList<Library> libraries;
     ArrayList<Integer> bookScores;
 
-    int[] tokens(String a)//converts a line with multiple numbers to a int array[]
+    ArrayList<Integer> tokens(String a)//converts a line with multiple numbers to a int array[]
     {
         int i,n=1;
         char c;
-        int[] ar;
+        ArrayList<Integer> ar = new ArrayList<>();
         Scanner sc=new Scanner(a);
         for(i=0;i<a.length();i++)
         {
@@ -27,9 +27,8 @@ public class files
             if(c==' ')
                 n++;
         }
-        ar=new int[n];
         for(i=0;i<n;i++)
-            ar[i]=sc.nextInt();
+            ar.add(sc.nextInt());
         return ar;
     }
     void loadFile() //to load the file.
@@ -46,20 +45,20 @@ public class files
     void makeEntry()throws IOException //makes required entry from file.
     {
         String tmp;
-        int[] tmpArr;
+        ArrayList<Integer> tmpArr;
         int i;
         Library tmpLib;
         tmpArr=tokens(fr.readLine());
         /* initializing B,L,D. */
-        B=tmpArr[0];
-        L=tmpArr[1];//
-        D=tmpArr[2];
+        B=tmpArr.get(0);
+        L=tmpArr.get(1);//
+        D=tmpArr.get(2);
         //scores=new int[B];
         tmp=fr.readLine();
         tmpArr=tokens(tmp);
         //tmpLib=(lb==null)?new library():lb;
         for(i=0;i<B;i++)
-            bookScores.add(tmpArr[i]);
+            bookScores.add(tmpArr.get(i));
         i=0;
 
         while((tmp=fr.readLine())!=null)
@@ -71,7 +70,7 @@ public class files
             tmpLib.initialize();*/
             tmp=fr.readLine();
             //tmpLib.ar=tokens(tmp);
-            libraries.add(new Library(i++,tmpArr[1],tmpArr[2], Arrays.asList(tokens(tmp))));
+            libraries.add(new Library(i++,tmpArr.get(0),tmpArr.get(2), tokens(tmp)));
             /*if(lb==null)
             {
                 lb=new library(tmpLib);
