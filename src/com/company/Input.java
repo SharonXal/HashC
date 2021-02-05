@@ -1,17 +1,20 @@
 package com.company;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Input {
-        String FILENAME = "/books.txt"; //name of the file to read from.
+        String FILENAME = "books.txt"; //name of the file to read from.
+        URL path = Input.class.getResource(FILENAME);
         BufferedReader fr; //reads input from file.
         int B = 0, L = 0, D = 0;
-        ArrayList<Library> libraries;
-        ArrayList<Integer> bookScores;
+        ArrayList<Library> libraries = new ArrayList<>();
+        ArrayList<Integer> bookScores = new ArrayList<>();
 
         ArrayList<Integer> tokens(String a)//converts a line with multiple numbers to a int array[]
         {
@@ -32,8 +35,9 @@ public class Input {
         void loadFile() //to load the file.
         {
             try {
-                fr = new BufferedReader(new FileReader(FILENAME));
+                fr = new BufferedReader(new FileReader(new File(path.getFile())));
             } catch (Exception e) {
+                e.printStackTrace();
                 System.out.println("File not found !");
             }
 
