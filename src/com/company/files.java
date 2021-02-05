@@ -51,7 +51,7 @@ public class files
         tmpArr=tokens(fr.readLine());
         /* initializing B,L,D. */
         B=tmpArr[0];
-        L=tmpArr[1];
+        L=tmpArr[1];//
         D=tmpArr[2];
         //scores=new int[B];
         tmp=fr.readLine();
