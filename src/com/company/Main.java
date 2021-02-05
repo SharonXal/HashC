@@ -36,6 +36,7 @@ public class Main {
         libraries = new ArrayList<>();
         libraries.add(lib1);
         libraries.add(lib0);
+        libraries.add(lib2);
         for(Library lib : libraries){
             lib.signUp();
             lib.scan();
