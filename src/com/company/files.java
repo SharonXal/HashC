@@ -108,6 +108,7 @@ public class files
             tmpLib.initialize();
             tmp=fr.readLine();
             tmpLib.ar=tokens(tmp);
+            libraries.add(new Library(tmpArr[0],tmpArr[1],tmpArr[2],Arrays.to));
 
             if(lb==null)
             {
