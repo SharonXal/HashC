@@ -13,7 +13,7 @@ public class Library extends Main{
     int libID;
     int availableDays;
     ArrayList<Integer> booksScanned;
-    public int libraryScore;
+    public double libraryScore;
 
 
     Library( int libID,int signUpDays, int bookScannedPerDay, ArrayList<Integer> bookID){
@@ -96,10 +96,10 @@ public class Library extends Main{
             libraryScore=(scoresSum*bookScannedPerDay)/signUpDays;
         }
 
-    public int getLibraryScore() {
-        libraryScore();
-        return libraryScore;
-    }
+        public double getLibraryScore() {
+            libraryScore();
+            return libraryScore;
+        }
 
     public ArrayList<Integer> updatedBookList(ArrayList<Integer> other){
         //TODO create and return new array list
