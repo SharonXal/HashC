@@ -10,7 +10,9 @@ import java.io.*;
 import java.io.PrintWriter;
 
 public class Output() {
+    ArrayList<Library> library;
     public Output(ArrayList<Library> library ) {
+        this.library = library;
 
     }
 
