@@ -97,6 +97,7 @@ public class Library extends Main{
         }
 
     public int getLibraryScore() {
+        libraryScore();
         return libraryScore;
     }
 
