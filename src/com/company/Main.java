@@ -46,6 +46,9 @@ public class Main {
         D=ob.D;
         libraries = ob.libraries;
         bookScores = ob.bookScores;
+        combinations a=new combinations(bookScores);
+        ArrayList<ArrayList<Integer>> tmp=a.get();
+        a.print(tmp);
 
         for(Library lib : libraries){
             lib.signUp();
