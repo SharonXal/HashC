@@ -46,11 +46,13 @@ public class Main {
         D=ob.D;
         libraries = ob.libraries;
         bookScores = ob.bookScores;
-//
-//        for(Library lib : libraries){
-//            lib.signUp();
-//            lib.scan();
-//        }
+
+        for(Library lib : libraries){
+            lib.signUp();
+            //lib.scan();
+            //lib.scan(lib.libraryAvailableDays());
+            lib.libraryScore();
+        }
 //
 //        System.out.println("Library 0 : ");
 //        for(int x: lib0.getBooksForScanning()){
@@ -62,6 +64,7 @@ public class Main {
         }
 
         //ArrayList<Integer> commons = lib1.updatedBookList(lib0.bookID);
+
     }
 
     //hello world

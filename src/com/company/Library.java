@@ -111,9 +111,8 @@ public class Library extends Main{
         Collections.sort(other, Collections.reverseOrder());
         return other;
     }
-    public ArrayList<Integer> scan(int availableDays, ArrayList<Integer> bookID){
+    public ArrayList<Integer> scan(int availableDays){
         ArrayList<Integer> booksScanned= new ArrayList<>();
-        Collections.sort(bookID, Collections.reverseOrder());
         int totalBookScanned = availableDays*bookScannedPerDay;
         if(totalBookScanned>totalBooks){
             for(int i=0;i<totalBooks;i++){
@@ -130,7 +129,7 @@ public class Library extends Main{
         return booksScanned;
         }
         public int libraryScore(){
-        ArrayList<Integer> bookScanned = new ArrayList<>(scan(this.availableDays, this.bookID));
+        ArrayList<Integer> bookScanned = new ArrayList<>(scan(this.availableDays));
         int libScore = 0;
         for(int i : bookScanned){
             libScore = libScore + i;
