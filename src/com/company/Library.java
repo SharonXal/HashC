@@ -141,6 +141,7 @@ public class Library extends Main{
         }
         return booksScanned;
         }
+
         public int libraryScore(){
         ArrayList<Integer> bookScanned = new ArrayList<>(scan(this.availableDays));
         int libScore = 0;
