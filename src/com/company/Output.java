@@ -16,7 +16,7 @@ public class Output()
     {
         int i,n;
         PrintWriter pw=new PrintWriter(new FileWriter("SubmissionFile.txt"));
-        n=/*function of total books to be signed up*/pw.println(n);//total libraries for scanning process
+        n=/*function of total books to be signed up*/
         for(i=0;i<=n;i++)//n=total books signed up for scanning
         {
             pw.println(/* function for first library for sign up process*/+' '+/*total books for sign up process*/);
