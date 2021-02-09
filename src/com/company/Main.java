@@ -46,12 +46,12 @@ public class Main {
         D=ob.D;
         libraries = ob.libraries;
         bookScores = ob.bookScores;
-
+//
 //        for(Library lib : libraries){
 //            lib.signUp();
 //            lib.scan();
 //        }
-
+//
 //        System.out.println("Library 0 : ");
 //        for(int x: lib0.getBooksForScanning()){
 //            System.out.println(x+" ,");
