@@ -56,60 +56,85 @@ public class Library extends Main{
     }
 
     public void signUp(){
-            isSignedUp=true;
-            signUpInitial=currentDay;
-            signUpFinal=currentDay+signUpDays;
-            currentDay+=signUpDays;
-            availableDays = D - signUpFinal;
-        }
-
-
-        public  void scan(){
-            Collections.sort(bookID, Collections.reverseOrder());
-            int totalBooksCanBeScanned = availableDays*bookScannedPerDay;
-
-
-            if(totalBooksCanBeScanned>totalBooks){
-                for(int i=0;i<totalBooks;i++){
-                    booksScanned.add(bookID.get(i));
-                    availableDays--;
-                }
-            }
-            else{
-                for(int i=0;i<totalBooksCanBeScanned;i++){
-                    booksScanned.add(bookID.get(i));
-                    availableDays--;
-                }
-            }
-
-        }
-
-        public ArrayList<Integer> getBooksForScanning(){
-            return booksScanned;
-        }
-
-        public void libraryScore(){
-            libraryScore=0;
-            int scoresSum=0;
-            for(int x: bookID)
-                scoresSum+=x;
-            libraryScore=(scoresSum*bookScannedPerDay)/signUpDays;
-        }
-
-    public int getLibraryScore() {
-        libraryScore();
-        return libraryScore;
+        isSignedUp=true;
+        signUpInitial=currentDay;
+        signUpFinal=currentDay+signUpDays;
+        currentDay+=signUpDays;
+        availableDays = D - signUpFinal;
     }
+
+
+    public  void scan(){
+        Collections.sort(bookID, Collections.reverseOrder());
+        int totalBooksCanBeScanned = availableDays*bookScannedPerDay;
+
+
+        if(totalBooksCanBeScanned>totalBooks){
+            for(int i=0;i<totalBooks;i++){
+                booksScanned.add(bookID.get(i));
+                availableDays--;
+            }
+        }
+        else{
+            for(int i=0;i<totalBooksCanBeScanned;i++){
+                booksScanned.add(bookID.get(i));
+                availableDays--;
+            }
+        }
+
+    }
+
+    public ArrayList<Integer> getBooksForScanning(){
+        return booksScanned;
+    }
+
+//    public void libraryScore(){
+//        libraryScore=0;
+//        int scoresSum=0;
+//        for(int x: bookID)
+//            scoresSum+=x;
+//        libraryScore=(scoresSum*bookScannedPerDay)/signUpDays;
+//    }
+//
+//    public int getLibraryScore() {
+//        libraryScore();
+//        return libraryScore;
+//    }
 
     public ArrayList<Integer> updatedBookList(ArrayList<Integer> other){
         //TODO create and return new array list
-            for(int i: booksScanned){
-                if(other.contains(i)){
-                    other.remove(i);
-                }
+        for(int i: booksScanned){
+            if(other.contains(i)){
+                other.remove(i);
             }
-            Collections.sort(other, Collections.reverseOrder());
-            return other;
         }
-
+        Collections.sort(other, Collections.reverseOrder());
+        return other;
     }
+    public ArrayList<Integer> scan(int availableDays, ArrayList<Integer> bookID){
+        ArrayList<Integer> booksScanned= new ArrayList<>();
+        Collections.sort(bookID, Collections.reverseOrder());
+        int totalBookScanned = availableDays*bookScannedPerDay;
+        if(totalBookScanned>totalBooks){
+            for(int i=0;i<totalBooks;i++){
+                booksScanned.add(bookID.get(i));
+                availableDays--;
+            }
+        }
+        else{
+            for(int i=0;i<totalBookScanned;i++){
+                booksScanned.add(bookID.get(i));
+                availableDays--;
+            }
+        }
+        return booksScanned;
+        }
+        public int libraryScore(){
+        ArrayList<Integer> bookScanned = new ArrayList<>(scan(this.availableDays, this.bookID));
+        int libScore = 0;
+        for(int i : bookScanned){
+            libScore = libScore + i;
+        }
+        return (libScore/signUpDays);
+        }
+}
