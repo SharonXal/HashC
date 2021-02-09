@@ -21,8 +21,8 @@ public class Output() {
         pw.println(n);
         for (i = 0; i <= n; i++)//n=total books signed up for scanning
         {
-            pw.println(/* function for first library for sign up process*/+' ' +/total books for sign up process/);
-            pw.println(/fuction of books in order that will be send from the library/+' ');
+            pw.println(/* function for first library for sign up process*/+' ' +/*total books for sign up process/);
+            pw.println(/*fuction of books in order that will be send from the library*/+' ');
         }
 
         pw.close();
