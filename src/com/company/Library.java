@@ -1,5 +1,6 @@
 package com.company;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -88,18 +89,18 @@ public class Library extends Main{
             return booksScanned;
         }
 
-        public void libraryScore(){
-            libraryScore=0;
-            int scoresSum=0;
-            for(int x: bookID)
-                scoresSum+=x;
-            libraryScore=(scoresSum*bookScannedPerDay)/signUpDays;
-        }
+//        public void libraryScore(){
+//            libraryScore=0;
+//            int scoresSum=0;
+//            for(int x: bookID)
+//                scoresSum+=x;
+//            libraryScore=(scoresSum*bookScannedPerDay)/signUpDays;
+//        }
 
-    public int getLibraryScore() {
-        libraryScore();
-        return libraryScore;
-    }
+//    public int getLibraryScore() {
+//        libraryScore();
+//        return libraryScore;
+//    }
 
     public ArrayList<Integer> updatedBookList(ArrayList<Integer> other){
         //TODO create and return new array list
@@ -111,5 +112,30 @@ public class Library extends Main{
             Collections.sort(other, Collections.reverseOrder());
             return other;
         }
-
+        public ArrayList<Integer> scan(int availableDays, ArrayList<Integer> bookID){
+            ArrayList<Integer> booksScanned = new ArrayList<>();
+            Collections.sort(bookID, Collections.reverseOrder());
+            int totalBooksCanBeScanned = availableDays*bookScannedPerDay;
+            if(totalBooksCanBeScanned>totalBooks){
+                for(int i=0;i<totalBooks;i++){
+                    booksScanned.add(bookID.get(i));
+                    availableDays--;
+                }
+            }
+            else{
+                for(int i=0;i<totalBooksCanBeScanned;i++){
+                    booksScanned.add(bookID.get(i));
+                    availableDays--;
+                }
+            }
+            return booksScanned;
+        }
+    int libraryScore(){
+        int bookScore = 0;
+        ArrayList<Integer> booksScanned = new ArrayList<>(scan(this.availableDays, this.bookID));
+        for(int i : booksScanned){
+            bookScore = bookScore+i;
+        }
+        return (bookScore)/signUpDays;
+    }
     }
