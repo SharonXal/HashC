@@ -101,7 +101,7 @@ public class Library extends Main{
             return libraryScore;
         }
 
-    public ArrayList<Integer> updatedBookList(ArrayList<Integer> other){
+        public ArrayList<Integer> updatedBookList(ArrayList<Integer> other){
         //TODO create and return new array list
             for(int i: booksScanned){
                 if(other.contains(i)){
