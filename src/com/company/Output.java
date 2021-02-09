@@ -24,6 +24,6 @@ public class Output()
         }
 
         pw.close();
-        fw.close();
+
 
     }
