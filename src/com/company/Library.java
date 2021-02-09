@@ -62,6 +62,19 @@ public class Library extends Main{
         currentDay+=signUpDays;
         availableDays = D - signUpFinal;
     }
+    public int signUp(boolean isSignedUp, int signUpDays, int currentDay, int signUpFinal, int signUpInitial,int availableDays){
+        isSignedUp=true;
+        this.signUpDays = signUpDays;
+        this.currentDay = currentDay;
+        this.signUpFinal = signUpFinal;
+        this.signUpInitial = signUpInitial;
+        this.availableDays = availableDays;
+        signUpInitial=currentDay;
+        signUpFinal=currentDay+signUpDays;
+        currentDay+=signUpDays;
+        availableDays = D - signUpFinal;
+        return availableDays;
+    }
 
 
     public  void scan(){
@@ -117,13 +130,13 @@ public class Library extends Main{
         if(totalBookScanned>totalBooks){
             for(int i=0;i<totalBooks;i++){
                 booksScanned.add(bookID.get(i));
-                availableDays--;
+                //availableDays--;
             }
         }
         else{
             for(int i=0;i<totalBookScanned;i++){
                 booksScanned.add(bookID.get(i));
-                availableDays--;
+                //availableDays--;
             }
         }
         return booksScanned;
