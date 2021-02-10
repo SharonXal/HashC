@@ -13,7 +13,6 @@ public class Library extends Main{
     int libID;
     int availableDays;
     ArrayList<Integer> booksScanned;
-    public int libraryScore;
 
 
     Library( int libID,int signUpDays, int bookScannedPerDay, ArrayList<Integer> bookID){
@@ -27,25 +26,6 @@ public class Library extends Main{
         booksScanned = new ArrayList<>();
     }
 
-
-//    int bookScore(){
-//        int avaliableDays = totalDays - signUpDays;
-//        int booksScannedInTotalAvaliableDays = avaliableDays*bookScannedPerDay;
-//        //Arrays.sort(bookID);
-//        int[] booksToBeScanned = new int[booksScannedInTotalAvaliableDays];
-//        for(int i=booksToBeScanned.length;i>0;i--){
-//            booksToBeScanned[i] = bookID.get(i);
-//        }
-//        this.bookID = booksToBeScanned.clone();
-//        int bookScore = 0;
-//        for(int i=0;i<bookID.length;i++)
-//            bookScore = bookScore+bookID[i];
-//        return bookScore;
-//    }
-
-//    int LibraryScore(){
-//        return (bookScore()/signUpDays);
-//    }
 
     public int getLibID() {
         return libID;
@@ -62,20 +42,6 @@ public class Library extends Main{
         currentDay+=signUpDays;
         availableDays = D - signUpFinal;
     }
-    public int signUp(boolean isSignedUp, int signUpDays, int currentDay, int signUpFinal, int signUpInitial,int availableDays){
-        isSignedUp=true;
-        this.signUpDays = signUpDays;
-        this.currentDay = currentDay;
-        this.signUpFinal = signUpFinal;
-        this.signUpInitial = signUpInitial;
-        this.availableDays = availableDays;
-        signUpInitial=currentDay;
-        signUpFinal=currentDay+signUpDays;
-        currentDay+=signUpDays;
-        availableDays = D - signUpFinal;
-        return availableDays;
-    }
-
 
     public  void scan(){
         Collections.sort(bookID, Collections.reverseOrder());
@@ -101,53 +67,4 @@ public class Library extends Main{
         return booksScanned;
     }
 
-//    public void libraryScore(){
-//        libraryScore=0;
-//        int scoresSum=0;
-//        for(int x: bookID)
-//            scoresSum+=x;
-//        libraryScore=(scoresSum*bookScannedPerDay)/signUpDays;
-//    }
-//
-//    public int getLibraryScore() {
-//        libraryScore();
-//        return libraryScore;
-//    }
-
-    public ArrayList<Integer> updatedBookList(ArrayList<Integer> other){
-        //TODO create and return new array list
-        for(int i: booksScanned){
-            if(other.contains(i)){
-                other.remove(i);
-            }
-        }
-        Collections.sort(other, Collections.reverseOrder());
-        return other;
-    }
-    public ArrayList<Integer> scan(int availableDays){
-        ArrayList<Integer> booksScanned= new ArrayList<>();
-        int totalBookScanned = availableDays*bookScannedPerDay;
-        if(totalBookScanned>totalBooks){
-            for(int i=0;i<totalBooks;i++){
-                booksScanned.add(bookID.get(i));
-                //availableDays--;
-            }
-        }
-        else{
-            for(int i=0;i<totalBookScanned;i++){
-                booksScanned.add(bookID.get(i));
-                //availableDays--;
-            }
-        }
-        return booksScanned;
-        }
-
-        public int libraryScore(){
-        ArrayList<Integer> bookScanned = new ArrayList<>(scan(this.availableDays));
-        int libScore = 0;
-        for(int i : bookScanned){
-            libScore = libScore + i;
-        }
-        return (libScore/signUpDays);
-        }
 }
