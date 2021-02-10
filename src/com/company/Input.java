@@ -8,15 +8,23 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Input {
+public class Input extends Main{
         String FILENAME = "books.txt"; //name of the file to read from.
         URL path = Input.class.getResource(FILENAME);
         BufferedReader fr; //reads input from file.
-        int B = 0, L = 0, D = 0;
-        ArrayList<Library> libraries = new ArrayList<>();
-        ArrayList<Integer> bookScores = new ArrayList<>();
 
-        ArrayList<Integer> tokens(String a)//converts a line with multiple numbers to a int array[]
+
+    public Input() {
+
+         B = 0;
+         L = 0;
+         D = 0;
+         libraries = new ArrayList<>();
+         bookScores = new ArrayList<>();
+
+    }
+
+    ArrayList<Integer> tokens(String a)//converts a line with multiple numbers to a int array[]
         {
 
             int i, n = 1;
@@ -46,6 +54,7 @@ public class Input {
 
         void makeEntry() //makes required entry from file.
         {
+            loadFile();
             String tmp;
             ArrayList<Integer> tmpArr;
             int i;

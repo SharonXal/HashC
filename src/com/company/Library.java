@@ -40,10 +40,18 @@ public class Library extends Main{
         signUpInitial=currentDay;
         signUpFinal=currentDay+signUpDays;
         currentDay+=signUpDays;
-        availableDays = D - signUpFinal;
+        availableDays = D - signUpFinal+1;
+    }
+    public void signUpFake(int currentDay){
+
+        signUpInitial=currentDay;
+        signUpFinal=currentDay+signUpDays;
+        availableDays = D - signUpFinal+1;
     }
 
+
     public  void scan(){
+        booksScanned = new ArrayList<>();
         Collections.sort(bookID, Collections.reverseOrder());
         int totalBooksCanBeScanned = availableDays*bookScannedPerDay;
 
@@ -51,20 +59,35 @@ public class Library extends Main{
         if(totalBooksCanBeScanned>totalBooks){
             for(int i=0;i<totalBooks;i++){
                 booksScanned.add(bookID.get(i));
-                availableDays--;
+                //availableDays--;
             }
         }
         else{
             for(int i=0;i<totalBooksCanBeScanned;i++){
                 booksScanned.add(bookID.get(i));
-                availableDays--;
+                //availableDays--;
             }
         }
 
     }
 
-    public ArrayList<Integer> getBooksForScanning(){
-        return booksScanned;
+    public int getTotalBookScore(){
+        int score=0;
+        for(int x:booksScanned)
+            score+=x;
+        return score;
     }
+    public ArrayList<Integer> getCommons(ArrayList<Integer> other){
+        ArrayList<Integer> commons = new ArrayList<>();
+        for(int i: booksScanned){
+            if(other.contains(i)){
+                commons.add(i);
+            }
+        }
+        Collections.sort(other, Collections.reverseOrder());
+        return commons;
+    }
+
+
 
 }
