@@ -9,7 +9,7 @@ import java.net.URL;
 import java.io.*;
 import java.io.PrintWriter;
 
-public class Output() {
+public class Output {
     public Output(ArrayList<Library> library ) {
 
     }
